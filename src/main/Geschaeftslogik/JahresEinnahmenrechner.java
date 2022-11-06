@@ -9,15 +9,15 @@ public class JahresEinnahmenrechner {
         for (Kunde node:kdb.getKunden()){
             double jahrespraemie=node.getPraemie();
             for(int i = 0;i<12;i++){
-                jahrespraemie+=jahrespraemie*0.1;
+                jahrespraemie+=jahrespraemie*0.01;
             }
             if (node.getBmi()>30.0){
-                jahrespraemie+=jahrespraemie*0.1;
+                jahrespraemie+=jahrespraemie*0.01;
             }
             if (node.isRaucher()){
-                jahrespraemie+=jahrespraemie*0.5;
+                jahrespraemie+=jahrespraemie*0.05;
             }
-            if (node.getKinderanzahl()>2){
+            if (node.getKinderanzahl()>=2){
                 jahrespraemie-=jahrespraemie*0.5;
             }
             res+=jahrespraemie;
